@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 import './App.css';
+import Registration from './Component/Form/Registration';
+import {Routes,Route} from 'react-router-dom'
+import Read from './Component/Read/Read';
+import Update from './Component/Update/Update';
+import Delete from './Component/Delete/Delete';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container-fluid text-center'>
+         <h2>React Crud Operations</h2>
+         <div>
+           <Routes>
+             <Route path='/' element={<Registration/>}/>
+             <Route path='/read' element={<Read/>}/>
+             <Route path='/update' element={<Update/>}/>
+             <Route path='/delete' element={<Delete/>}/>
+           </Routes>
+         </div>
     </div>
   );
 }
